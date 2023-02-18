@@ -6,6 +6,10 @@ class Video(models.Model):
     slug = models.SlugField(blank=True, null=True)
     video_id = models.CharField(max_length=20)
     active = models.BooleanField(default=True)
+
+    @property
+    def is_published(self):
+        return self.active
     # timestamp
     # updated
     # state
